@@ -1,48 +1,65 @@
 <!DOCTYPE html>
 <html>
-<body>
+<head>
 <style>
-.myClass {
-  color: white;
-  background-color: DodgerBlue;
-  padding: 20px;
-  text-align: center;
-  margin: 10px;
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
 }
 </style>
+</head>
+<body>
 
-<h1>The template Element</h1>
+<h2>HTML Table</h2>
 
-<p>This example fills the web page with one new div element for each item in an array.</p>
-<p>The HTML code of each div element is inside the template element.</p>
-
-<p>Click the button below to display the hidden content from the template element.</p>
-
-<button onclick="showContent()">Show hidden content</button>
-
-<template>
-  <div class="myClass">I like: </div>
-</template>
-
-<script>
-let myArr = ["Audi", "BMW", "Ford", "Honda", "Jaguar", "Nissan"];
-
-function showContent() {
-  let temp, item, a, i;
-  temp = document.getElementsByTagName("template")[0];
-  //get the div element from the template:
-  item = temp.content.querySelector("div");
-  //for each item in the array:
-  for (i = 0; i < myArr.length; i++) {
-    //Create a new node, based on the template:
-    a = document.importNode(item, true);
-    //Add data from the array:
-    a.textContent += myArr[i];
-    //append the new node wherever you like:
-    document.body.appendChild(a);
-  }
-}
-</script>
+<table>
+  <tr>
+    <th>Company</th>
+    <th>Contact</th>
+    <th>Country</th>
+  </tr>
+  <tr>
+    <td>Alfreds Futterkiste</td>
+    <td>Maria Anders</td>
+    <td>Germany</td>
+  </tr>
+  <tr>
+    <td>Centro comercial Moctezuma</td>
+    <td>Francisco Chang</td>
+    <td>Mexico</td>
+  </tr>
+  <tr>
+    <td>Ernst Handel</td>
+    <td>Roland Mendel</td>
+    <td>Austria</td>
+  </tr>
+  <tr>
+    <td>Island Trading</td>
+    <td>Helen Bennett</td>
+    <td>UK</td>
+  </tr>
+  <tr>
+    <td>Laughing Bacchus Winecellars</td>
+    <td>Yoshi Tannamuri</td>
+    <td>Canada</td>
+  </tr>
+  <tr>
+    <td>Magazzini Alimentari Riuniti</td>
+    <td>Giovanni Rovelli</td>
+    <td>Italy</td>
+  </tr>
+</table>
 
 </body>
 </html>
