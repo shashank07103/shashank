@@ -1,11 +1,48 @@
-using System;
-class Program
-{
-    static void Main()
-    {
-        TimeZone zone = TimeZone.CurrentTimeZone;
-        DateTime local = zone.ToLocalTime(DateTime.Now);
-        Console.WriteLine("The Local Time is : {0}",local);
-        Console.ReadLine();
-    }
+<!DOCTYPE html>
+<html>
+<body>
+<style>
+.myClass {
+  color: white;
+  background-color: DodgerBlue;
+  padding: 20px;
+  text-align: center;
+  margin: 10px;
 }
+</style>
+
+<h1>The template Element</h1>
+
+<p>This example fills the web page with one new div element for each item in an array.</p>
+<p>The HTML code of each div element is inside the template element.</p>
+
+<p>Click the button below to display the hidden content from the template element.</p>
+
+<button onclick="showContent()">Show hidden content</button>
+
+<template>
+  <div class="myClass">I like: </div>
+</template>
+
+<script>
+let myArr = ["Audi", "BMW", "Ford", "Honda", "Jaguar", "Nissan"];
+
+function showContent() {
+  let temp, item, a, i;
+  temp = document.getElementsByTagName("template")[0];
+  //get the div element from the template:
+  item = temp.content.querySelector("div");
+  //for each item in the array:
+  for (i = 0; i < myArr.length; i++) {
+    //Create a new node, based on the template:
+    a = document.importNode(item, true);
+    //Add data from the array:
+    a.textContent += myArr[i];
+    //append the new node wherever you like:
+    document.body.appendChild(a);
+  }
+}
+</script>
+
+</body>
+</html>
