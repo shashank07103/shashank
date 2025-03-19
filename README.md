@@ -1,7 +1,4 @@
-/*# shashank
-/*
- * C# Program to get the Local Time
- */
+
 using System;
 class Program
 {
