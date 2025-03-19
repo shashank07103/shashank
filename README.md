@@ -1,11 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<style>
-
-
-zzz
-</style>
+Simple table code using html
 </head>
 <body>
 
